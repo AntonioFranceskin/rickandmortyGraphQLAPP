@@ -1,0 +1,21 @@
+<article class="card">
+    <a [routerLink]="['/character-details',character.id]" class="card__link">
+        <figure>
+            <img [src]="character.image" [alt]="character.name" rel="preload" as="image" width="300" height="300">
+        </figure>
+    </a>
+    <div class="card__details">
+        <figure class=card__favorite>
+            <img (click)="toogleFavorite()" src="/assets/imgs/{{getIcon(character.isFavorite)}}" 
+            [alt]="character.name" rel="preload" as="image" width="30" height="30">
+        </figure>
+        <h3>
+            {{character.name}}
+        </h3>
+        <ul class="card__list">
+            <li><label class="table__label">Status</label>{{character.status}}</li>
+            <li><label class="table__label">Species</label>{{character.species}}</li>
+            <li><label class="table__label">Gender</label>{{character.gender}}</li>
+        </ul>
+    </div> 
+</article>
